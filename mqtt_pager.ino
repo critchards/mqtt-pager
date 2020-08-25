@@ -22,8 +22,8 @@
 
   const int BUTTONPIN = 9;    //set button output
   const int LEDPIN = 16;       //set status LED To D0
-  const int TONEPIN = 5;     //set buzzer pin to 12, RSV
-  const int MAXRINGS = 7;    //max mnumber of rings  
+  const int TONEPIN = 5;     //set buzzer pin to SD2,
+  const int MAXRINGS = 7;    //max number of rings  
 
   int ledState = LOW;         //for LED SM
   int toneState = LOW;        //for tone SM
