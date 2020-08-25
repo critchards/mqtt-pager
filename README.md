@@ -17,7 +17,7 @@ I also had watched a couple great online workshops about IoT using these cheap l
 ## How are we going to solve this?
 Through a luckly alignment of the stars I had learned almost everything I needed in the last few months to almost know what I was doing. And even more lucky, this particular project was dangerous enough that my little bit of knowledge was going to get anyone hurt. Basically, using the ESP8266 NodeMCU Dev board, and Adafruit.io I had a platform for MQTT. Add your basic butons, LEDs and buzzers and that is all we need. Package it all on a prototyping board for the high tech look and that should be enough to keep it interesting. (And accomodate my numerous mistakes. :) )
 1. Hardware - ESP8266/ESP32
-2. Sofwtare - Arduino
+2. Software - Arduino
 3. IoT - Adafruit.io
 
 # next Steps
