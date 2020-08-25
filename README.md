@@ -3,7 +3,7 @@ Sure, 3 or 4 times a day, every day of the Covid-19 pandemic, until I probably s
 <br>Then I thought, aren't thinking engines supposed to do this type of drudgery for us? What if there was a device where you could push a button or two, and another device far, far away would light up and make sounds. I bet everyone and their mother would want one. You could probably sell these things by the bushel. But they would need a catchy name. Sell... Sell... sell what? Sell.. why? Sell for... not enterrupting. Sell for not enterrupting. Too long, shorten it to Sell FO-NE... perfect!
 <p><p>
 All kidding aside, I thought wouldn't it be neat if my son has a button he could push that would alert his friends he wanted to play. And if they wanted to play too, they could hit a button on their side that let my son know they wanted to play to. I imagined it like OCTONAUTS TO THE LAUNCH BAY, or PAW PATROL TO THE LOOKOUT. Hell even my buddies would probably want one...   
-<br> meandtheboys.jpg
+<br> ![meandtheboys](/images/meandtheboys.jpg)
 <p> I also had watched a couple great online workshops about IoT using these cheap little developer boards and thought it would be a great opportunity to stretch my knowledge. 
   <br> link to jimbobbennet busy lite and welington IoT tutorial
 <p> # Define the Problem
