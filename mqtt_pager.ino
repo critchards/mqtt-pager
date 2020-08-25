@@ -1,3 +1,5 @@
+  //some parts of this have been copied from adafruit, and some from wduraes. You can tell from the {convention}
+  
   #include <ESP8266WiFi.h>
   #include "Adafruit_MQTT.h"
   #include "Adafruit_MQTT_Client.h"
@@ -18,18 +20,18 @@
 
   void MQTT_connect();
 
-  const int buttonPin = 9;    //set button output
-  const int ledPin = 16;       //set status LED To D0
-  const int tonePin = 5;     //set buzzer pin to 12, RSV
+  const int BUTTONPIN = 9;    //set button output
+  const int LEDPIN = 16;       //set status LED To D0
+  const int TONEPIN = 5;     //set buzzer pin to 12, RSV
   const int MAXRINGS = 7;    //max mnumber of rings  
 
   int ledState = LOW;         //for LED SM
   int toneState = LOW;        //for tone SM
-  int lastButtonState = 0;  //for button debounce
-  int buttonState = 0;
+  int lastButtonState = 0;  //for button edge detect
+  int buttonState = 0;		//for current button state
   int numRings = 0;     //count number of times I have rung
 
-  bool Ringing = false;
+  bool Ringing = false;		//am i ringing or not
 
   unsigned long currentTime = 0;      //SM global timer
   unsigned long prePing = 0;          //SM timer for ping
@@ -37,14 +39,12 @@
   unsigned long lastRing = 0;         //SM for LED and tone on during ring
   unsigned long lastTone = 0;         //SM timer for tone
   unsigned long lastDebounceTime = 0; //SM timer for button debounce
-  unsigned long debounceDelay = 50;   
-
      
   void setup() 
   {       
     Serial.begin(115200);
-    pinMode(ledPin, OUTPUT);
-    pinMode(buttonPin, INPUT);
+    pinMode(LEDPIN, OUTPUT);
+    pinMode(BUTTONPIN, INPUT);
   
     // Connect to WiFi access point.
     Serial.println(); Serial.println();
@@ -66,7 +66,7 @@
     // Setup MQTT subscriptions for all feeds.
     mqtt.subscribe(&response);
 
-    digitalWrite(ledPin, ledState);
+    digitalWrite(LEDPIN, ledState);
   }
      
   void loop() 
@@ -105,7 +105,7 @@
       }
     }           
 
-    int reading = digitalRead(buttonPin);				//check the status of the pushbutton
+    int reading = digitalRead(BUTTONPIN);				//check the status of the pushbutton
     if(reading != lastButtonState)						//only do something if the button has changed. May need to debounce?
     {
       if(reading == 1)      //if button is high, set to high
@@ -146,25 +146,25 @@
       {
         toneState = LOW;
         lastTone = currentTime;
-        noTone(tonePin);
+        noTone(TONEPIN);
       }
       if((toneState == LOW) && (currentTime - lastTone > 500))		//SM for turning buzzer on
       {
         toneState = HIGH;
         lastTone = currentTime;
-        tone(tonePin, 1000);
+        tone(TONEPIN, 1000);
       }
       if((ledState == LOW) && (currentTime - lastRing > 1000))		//SM for turning LED off
       {
         ledState = HIGH;
         lastRing = currentTime;
-        digitalWrite(ledPin, ledState);
+        digitalWrite(LEDPIN, ledState);
       }
       if((ledState == HIGH) && (currentTime - lastRing > 1000))		//SM for turning LED on
       {
         ledState = LOW;
         lastRing = currentTime;
-        digitalWrite(ledPin, ledState);
+        digitalWrite(LEDPIN, ledState);
         numRings++;													//number of rings is defined as number of times LED turns on
       }
     }
@@ -174,8 +174,8 @@
       if(request.publish("WAITING"))     //publish WAITING so that system knows no request in progress
       {
         Serial.println("max rings, send waiting");
-        digitalWrite(ledPin, LOW);
-        noTone(tonePin);
+        digitalWrite(LEDPIN, LOW);
+        noTone(TONEPIN);
         Ringing = false;                
         numRings = 0;
       }
@@ -195,6 +195,7 @@
 
   // Function to connect and reconnect as necessary to the MQTT server.
   // Should be called in the loop function and it will take care if connecting.
+  // copied directly from wduraes IoT_101_Online.ino
   void MQTT_connect() {
     
     int8_t ret;
@@ -225,15 +226,15 @@
     {
       for(int i = 0; i<3; i++)
       {
-        digitalWrite(ledPin, HIGH);
-        tone(tonePin, 500);
+        digitalWrite(LEDPIN, HIGH);
+        tone(TONEPIN, 500);
         delay(100);
-        tone(tonePin, 650);
+        tone(TONEPIN, 650);
         delay(100);
-        tone(tonePin, 1000);
+        tone(TONEPIN, 1000);
         delay(100);
-        noTone(tonePin);
-        digitalWrite(ledPin, LOW);
+        noTone(TONEPIN);
+        digitalWrite(LEDPIN, LOW);
         delay(300);
       }
       delay(600);
