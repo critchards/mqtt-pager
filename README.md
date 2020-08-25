@@ -20,5 +20,6 @@ Through a luckly alignment of the stars I had learned almost everything I needed
 2. Software - Arduino
 3. IoT - Adafruit.io
 
+![Shazam!](/images/final_pager.jpg)
 # next Steps
 figure out public feeds to see if multiple people can use devices
