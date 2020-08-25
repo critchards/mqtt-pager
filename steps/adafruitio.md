@@ -1,1 +1,1 @@
-link to adafruit.io (or use welingtons explanation)
+link to adafruit.io (or use wduraes explanation)
