@@ -9,4 +9,4 @@ Its all Amazon links, becuase thats easiest for me to find. I bought most of thi
 7. 2x 4.7kOhm resistor - from the same kit. Strictly speaking this is not necessary since you can use the built in pulldown function of the board but this is how I was taught...
 
 Wire it up as so
-![Fritz](/images/mqtt-pager-fritzing_bb.png "")
+![Fritz](/images/mqtt-pager-fritzing_bb.jpg)
