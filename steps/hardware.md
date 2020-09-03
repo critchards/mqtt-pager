@@ -7,6 +7,6 @@ Its all Amazon links, becuase thats easiest for me to find. I bought most of thi
 5. 2x [5mm LED](https://www.amazon.com/eBoot-Pieces-Emitting-Diodes-Assorted/dp/B06XPV4CSH/ref=sr_1_6?dchild=1&keywords=LED+arduino&qid=1599006200&sr=8-6) Whichever color you want.
 6. 2x [300Ohm resistor](https://www.amazon.com/Elegoo-Values-Resistor-Assortment-Compliant/dp/B072BL2VX1/ref=sr_1_1_sspa?dchild=1&keywords=resistor+kit&qid=1599006274&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzNjBWVUVOVFMxVVNIJmVuY3J5cHRlZElkPUEwNzQyNzMxM1ZINlBJV1E4OFdRSSZlbmNyeXB0ZWRBZElkPUEwNjU3NDA1SERVSFVJN1MxRkgxJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==) just buy a kit.
 7. 2x 4.7kOhm resistor - from the same kit. Strictly speaking this is not necessary since you can use the built in pulldown function of the board but this is how I was taught...
-
+8. And some jumper wires.
 Wire it up as so
 ![Fritz](/images/mqtt-pager-fritzing_bb.jpg)
