@@ -11,3 +11,6 @@ Its all Amazon links, becuase thats easiest for me to find. I bought most of thi
 
 Wire it up as so
 ![Fritz](https://github.com/critchards/mqtt-pager/blob/master/images/mqtt-pager-fritzing_bb.png)
+
+
+Note this is with the DOIT ESP32 Board which doesnt exactly fit on the half sized breadboard.
