@@ -10,4 +10,4 @@ Its all Amazon links, becuase thats easiest for me to find. I bought most of thi
 8. And some jumper wires.
 
 Wire it up as so
-![Fritz](/images/mqtt-pager-fritzing_bb.jpg)
+![Fritz](https://github.com/critchards/mqtt-pager/blob/master/images/mqtt-pager-fritzing_bb.png)
