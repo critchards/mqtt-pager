@@ -1,6 +1,8 @@
   //some parts of this have been copied from adafruit, and some from wduraes. You can tell from the {convention}
   
-  #include <ESP8266WiFi.h>
+  #include <ESP8266WiFi.h>					//use this one if you have an ESP8266
+  //#include <Wifi.h>						//use this one if you have an ESP32
+  //#include <Tone32.h>						//Tone is not implemented on the ESP32, need to manually install this library
   #include "Adafruit_MQTT.h"
   #include "Adafruit_MQTT_Client.h"
 
@@ -20,10 +22,10 @@
 
   void MQTT_connect();
 
-  const int BUTTONPIN = 9;    //set button output
-  const int LEDPIN = 16;       //set status LED To D0
-  const int TONEPIN = 5;     //set buzzer pin to 12, RSV
-  const int MAXRINGS = 7;    //max mnumber of rings  
+  const int BUTTONPIN = 9;    //set button output pin
+  const int LEDPIN = 16;       //set status LED To pin number
+  const int TONEPIN = 5;     //set buzzer to pin number
+  const int MAXRINGS = 7;    //max number of rings  
 
   int ledState = LOW;         //for LED SM
   int toneState = LOW;        //for tone SM

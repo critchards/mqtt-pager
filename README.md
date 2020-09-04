@@ -4,7 +4,7 @@ Sure, **3 or 4 times a day, every day, of the Covid-19 pandemic**, until I proba
 
 Then I thought, aren't thinking engines supposed to do this type of drudgery for us? What if there was a device where you could push a button or two, and another device far, far away would light up and make sounds. I bet everyone and their mother would want one. You could probably sell these things by the bushel. But they would need a catchy name. Sell... Sell... sell what? Sell.. why? Sell for... not enterrupting. Sell for not enterrupting. Too long, shorten it to Sell FO-NE... perfect!
 
-All kidding aside, I thought wouldn't it be neat if my son has a button he could push that would alert his friends he wanted to play. And if they wanted to play too, they could hit a button on their side that let my son know they wanted to play to. I imagined it like OCTONAUTS TO THE LAUNCH BAY, or PAW PATROL TO THE LOOKOUT. Hell even my buddies would probably want one...   
+All kidding aside, I thought wouldn't it be neat if my son has a button he could push that would alert his friends he wanted to play. And if they wanted to play too, they could hit a button on their side that let my son know they wanted to play also. I imagined it sending out a call like OCTONAUTS TO THE LAUNCH BAY, or PAW PATROL TO THE LOOKOUT. Hell even my buddies would probably want one...   
 ![meandtheboys](/images/meandtheboys.jpg) <br>
 
 I also had watched a couple great online workshops about IoT using these cheap little developer boards and thought it would be a great opportunity to stretch my knowledge. **A big thankyou to jimbobbennet and wduraes for their workshops on IoT and arduino.**  
@@ -17,10 +17,9 @@ I also had watched a couple great online workshops about IoT using these cheap l
 <br>*image for state diagram*
 
 ## How are we going to solve this?
-Through a luckly alignment of the stars I had learned almost everything I needed in the last few months to almost know what I was doing. And even more lucky, this particular project was not dangerous enough that my little bit of knowledge was going to get anyone hurt. Basically, using the ESP8266 NodeMCU Dev board, and Adafruit.io I had a platform for MQTT. Add your basic butons, LEDs and buzzers and that is all we need. Package it all on a prototyping board for the high tech look and that should be enough to keep it interesting. (And accomodate my numerous mistakes. :) )
+Through a luckly alignment of the stars I had learned almost everything I needed in the last few months to almost know what I was doing. And even more lucky, this particular project was not dangerous enough that my little bit of knowledge was going to get anyone hurt. Basically, using the ESP8266 NodeMCU Dev board, and Adafruit.io I had a platform for MQTT. Add your basic buttons, LEDs and buzzers and that is all we need. Package it all on a prototyping board for the high tech look and that should be enough to keep it interesting. (And accomodate my numerous mistakes. :) )
 1. [Hardware - ESP8266/ESP32](/steps/hardware.md)
 2. [Software - Arduino](/steps/software.md)
-3. [IoT - Adafruit.io](/steps/adafruitio.md)
 
 ![Shazam!](/images/final_pager.jpg)
 # next Steps
