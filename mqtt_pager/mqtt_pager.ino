@@ -1,17 +1,19 @@
   //some parts of this have been copied from adafruit, and some from wduraes. You can tell from the {convention}
   
   #include <ESP8266WiFi.h>					//use this one if you have an ESP8266
-  //#include <Wifi.h>						//use this one if you have an ESP32
-  //#include <Tone32.h>						//Tone is not implemented on the ESP32, need to manually install this library
+  //#include <Wifi.h>						    //use this one if you have an ESP32
+  //#include <Tone32.h>						  //Tone is not implemented on the ESP32, need to manually install this library
   #include "Adafruit_MQTT.h"
   #include "Adafruit_MQTT_Client.h"
 
   #define WLAN_SSID       "THE WIFI NAME GOES HERE"					//for whichever house this device is going to live at
-  #define WLAN_PASS       "THE WIFI PASSWORD GOES HERE"				//for whichever house this device is gonig to live at
+  #define WLAN_PASS       "THE WIFI PASSWORD GOES HERE"				//for whichever house this device is going to live at
   #define AIO_SERVER      "io.adafruit.com"
   #define AIO_USERNAME    "YOUR ADAFRUIT USER NAME GOES HERE"
   #define AIO_KEY         "COPY YOUR ADAFRUIT.IO KEY HERE"
-  #define AIO_SERVERPORT  1883                   
+  #define AIO_SERVERPORT  1883
+  #define BUZZER_CHANNEL 0                                  //needed for Tone32 implementation
+                     
   WiFiClient client;
   //#define AIO_SERVERPORT  8883     // use 8883 for SSL
   //WiFiClientSecure client;  // use WiFiFlientSecure for SSL
@@ -24,7 +26,7 @@
 
   const int BUTTONPIN = 9;    //set button output pin
   const int LEDPIN = 16;       //set status LED To pin number
-  const int TONEPIN = 5;     //set buzzer to pin number
+  const int TONEPIN = 5;     //set buzzer to pin number, for DOIT ESP32 boards use 12
   const int MAXRINGS = 7;    //max number of rings  
 
   int ledState = LOW;         //for LED SM
@@ -148,13 +150,15 @@
       {
         toneState = LOW;
         lastTone = currentTime;
-        noTone(TONEPIN);
+        noTone(TONEPIN);                                          //if using ESP8266
+        //noTone(TONEPIN, BUZZER_CHANNEL);                        //if using ESP32
       }
       if((toneState == LOW) && (currentTime - lastTone > 500))		//SM for turning buzzer on
       {
         toneState = HIGH;
         lastTone = currentTime;
-        tone(TONEPIN, 1000);
+        tone(TONEPIN, 1000);                                      //ESP8266
+        //tone(TONEPIN, 1000, 0, BUZZER_CHANNEL);                 //ESP32
       }
       if((ledState == LOW) && (currentTime - lastRing > 1000))		//SM for turning LED off
       {
@@ -177,7 +181,8 @@
       {
         Serial.println("max rings, send waiting");
         digitalWrite(LEDPIN, LOW);
-        noTone(TONEPIN);
+        noTone(TONEPIN);                        //ESP8266
+        //noTone(TONEPIN, BUZZER_CHANNEL);        //ESP32           
         Ringing = false;                
         numRings = 0;
       }
@@ -230,12 +235,16 @@
       {
         digitalWrite(LEDPIN, HIGH);
         tone(TONEPIN, 500);
+        //tone(TONEPIN, 500, 0, BUZZER_CHANNEL);    //ESP32
         delay(100);
         tone(TONEPIN, 650);
+        //tone(TONEPIN, 650, 0, BUZZER_CHANNEL);    //ESP32
         delay(100);
         tone(TONEPIN, 1000);
+        //tone(TONEPIN, 1000, 0, BUZZER_CHANNEL);    //ESP32
         delay(100);
         noTone(TONEPIN);
+        //noTone(TONEPIN, BUZZER_CHANNEL);           //ESP32
         digitalWrite(LEDPIN, LOW);
         delay(300);
       }
